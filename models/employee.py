@@ -1,4 +1,4 @@
-from tasks.database import CursorFromConnectionPool
+from models.database import CursorFromConnectionPool
 
 class Employee:
     def __init__(self, empno, ename, job, mgr, hiredate, sal, comm, deptno):
@@ -12,7 +12,15 @@ class Employee:
         self.deptno = deptno
 
     def __repr__(self):
-        return f"<Employee (empno = {self.empno}), (ename = {self.ename}), (job = {self.job}, (mgr = {self.mgr}), (sal = {self.sal}))>"
+        return f"<Employee (empno = {self.empno}), (ename = {self.ename}), (job = {self.job}), (mgr = {self.mgr}), (sal = {self.sal})>"
+
+    @classmethod
+    def show_all_data(cls):
+        with CursorFromConnectionPool() as cursor:
+            cursor.execute("SELECT * FROM emp")
+            user_data = cursor.fetchall()
+            for data in user_data:
+                print(cls(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7]))
     
     def save_to_db(self):
         with CursorFromConnectionPool() as cursor:
@@ -23,8 +31,5 @@ class Employee:
                 pass
             finally:
                 print("Add here")
-            # cursor.execute(f'SELECT * FROM emp')
-            # all_data = cursor.fetchall()
-            # print(all_data)
 
     

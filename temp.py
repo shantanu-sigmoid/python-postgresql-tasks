@@ -17,5 +17,5 @@ print(data)
 #Closing the connection
 conn.close()
 # Connection established to: (
-#    'PostgreSQL 11.5, compiled by Visual C++ build 1914, 64-bit',
+#    'PostgreSQL 12.0, compiled by Visual C++ build 1914, 64-bit',
 # )

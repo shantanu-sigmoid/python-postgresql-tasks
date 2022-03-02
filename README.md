@@ -1,3 +1,5 @@
+![Count](https://profile-counter.glitch.me/shantanu-sigmoid/count.svg)
+
 Prerequisites:
 1.	Install Postgres locally on your laptop if not done already
 2.	Insert dummy data using the below script
