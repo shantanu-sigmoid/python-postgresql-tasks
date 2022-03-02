@@ -1,4 +1,5 @@
 from models.database import CursorFromConnectionPool
+import psycopg2
 
 class Employee:
     def __init__(self, empno, ename, job, mgr, hiredate, sal, comm, deptno):
@@ -27,9 +28,7 @@ class Employee:
             try:
                 cursor.execute(f"INSERT INTO emp VALUES ({self.empno}, '{self.ename}', '{self.job}', {self.mgr}, '{self.hiredate}', {self.sal}, {self.comm}, {self.deptno})")
                 print("Successfully Added entry to Database ::emp::!!!")
-            except:
-                pass
-            finally:
-                print("Add here")
+            except (Exception, psycopg2.DatabaseError) as error:
+                print(error)
 
     
