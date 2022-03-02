@@ -18,6 +18,7 @@ class Employee:
         with CursorFromConnectionPool() as cursor:
             try:
                 cursor.execute(f"INSERT INTO emp VALUES ({self.empno}, '{self.ename}', '{self.job}', {self.mgr}, '{self.hiredate}', {self.sal}, {self.comm}, {self.deptno})")
+                print("Successfully Added entry to Database ::emp::!!!")
             except:
                 pass
             finally:
