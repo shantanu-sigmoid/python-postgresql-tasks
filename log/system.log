@@ -1,0 +1,14 @@
+2022-03-03 13:47:52,781:DEBUG:Database Initialized
+2022-03-03 13:50:46,665:DEBUG:Database Initialized
+2022-03-03 13:50:46,666:DEBUG:Department Created <(dept_no = 97), (dept_name = demo_dname2), (loc = demo_location)
+2022-03-03 13:52:57,498:DEBUG:Database Initialized
+2022-03-03 13:52:57,498:INFO:Department object created <(dept_no = 97), (dept_name = demo_dname2), (loc = demo_location)>
+2022-03-03 13:52:57,498:INFO:Employee object created <(empno = 9998), (ename = SMITH), (job = CLERK)>
+2022-03-03 13:54:48,719:DEBUG:Database Initialized
+2022-03-03 13:54:48,719:INFO:Department object created <(dept_no = 97), (dept_name = demo_dname2), (loc = demo_location)>
+2022-03-03 13:54:48,719:INFO:Employee object created <(empno = 9998), (ename = SMITH), (job = CLERK)>
+2022-03-03 13:54:48,719:INFO:JobHistory object created <(empno = 9999), (start_date = 17-DEC-88), (sal = 999)>
+2022-03-03 14:07:05,904:DEBUG:Database Initialized
+2022-03-03 14:07:05,904:INFO:Department object created <(dept_no = 97), (dept_name = demo_dname2), (loc = demo_location)>
+2022-03-03 14:07:05,904:INFO:Employee object created <(empno = 9998), (ename = SMITH), (job = CLERK)>
+2022-03-03 14:07:05,904:INFO:JobHistory object created <(empno = 9999), (start_date = 17-DEC-88), (sal = 999)>

@@ -1,5 +1,6 @@
 from models.database import CursorFromConnectionPool
 import psycopg2
+import logging
 
 class Employee:
     def __init__(self, empno, ename, job, mgr, hiredate, sal, comm, deptno):
@@ -11,6 +12,7 @@ class Employee:
         self.sal = sal
         self.comm = comm
         self.deptno = deptno
+        logging.info(f"Employee object created <(empno = {empno}), (ename = {ename}), (job = {job})>")
 
     def __repr__(self):
         return f"<Employee (empno = {self.empno}), (ename = {self.ename}), (job = {self.job}), (mgr = {self.mgr}), (sal = {self.sal})>"

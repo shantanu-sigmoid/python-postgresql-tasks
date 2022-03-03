@@ -21,18 +21,30 @@ from ..models.database import CursorFromConnectionPool
 # TODO: Resolve importing database cursor from models above
 
 import pandas as pd
+import logging
 
 def run_query(query):
     with CursorFromConnectionPool() as cursor:
-        cursor.execute(query)
+        try:
+            cursor.execute(query)
+            logging.debug(f"Query exceuted on cursor - {query}")
+        except:
+            logging.error("Failed to fetch cursor from Database")
+        # Extracting whole result from cursor
         query_result = cursor.fetchall()
+        # Adding header in query result from cursor.description
         query_result.insert(0, [cursor.description[i].name for i in range(len(cursor.description))])
         return query_result
 
 def convert_list_to_xlsx(data, location):
+    # Converting data (list type) to dataframe
     df = pd.DataFrame(data)
-    df.to_excel(location, header =False, index = False)
-
+    try:
+        # Converting dataframe to excel in location
+        df.to_excel(location, header =False, index = False)
+        logging.info(f"Dataframe converted to excel stored in location - {location}")
+    except:
+        logging.error(f"Unable to convert dataframe to excel in location - {location}")
 if __name__ == "__main__":
     query = "select e1.empno, e1.ename as emp_name, e2.ename as mgr_name  \
     from emp as e1 INNER JOIN emp as e2 on (e1.mgr = e2.empno);"

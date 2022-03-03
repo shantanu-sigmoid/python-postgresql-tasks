@@ -1,11 +1,13 @@
 from models.database import CursorFromConnectionPool
 import psycopg2
+import logging
 
 class Department:
     def __init__(self, dept_no, dept_name, location):
         self.deptno = dept_no
         self.dname = dept_name
         self.loc = location
+        logging.info(f"Department object created <(dept_no = {dept_no}), (dept_name = {dept_name}), (loc = {location})>")
 
     def __repr__(self):
         return f"<Department (deptno = {self.deptno}), (dname = {self.dname}), (loc = {self.loc})>"

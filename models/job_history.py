@@ -1,5 +1,6 @@
 from models.database import CursorFromConnectionPool
 import psycopg2
+import logging
 
 class JobHistory:
     def __init__(self, empno, startdate, enddate, job, sal, comm, deptno, chgdesc):
@@ -11,6 +12,8 @@ class JobHistory:
         self.comm = comm
         self.deptno = deptno
         self.chgdesc = chgdesc
+        logging.info(f"JobHistory object created <(empno = {empno}), (start_date = {startdate}), (sal = {sal})>")
+        
 
     def __repr__(self):
         return f"<JobHistory (empno = {self.empno}), (startdate = {self.startdate}), (enddate = {self.enddate}), (job = {self.job}), (sal = {self.sal})>"
