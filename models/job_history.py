@@ -25,17 +25,6 @@ class JobHistory:
             user_data = cursor.fetchall()
             for data in user_data:
                 print(cls(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7]))
-        
-    # DELETE THIS PLS
-    @classmethod
-    def show_all_dat(cls):
-        with CursorFromConnectionPool() as cursor:
-            cursor.execute("SELECT * FROM jobhist")
-            arr = cursor.fetchall()
-            arr.insert(0, (i[0] for i in cursor.description))
-            return arr
-            for data in user_data:
-                print(cls(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7]))
     
     def save_to_db(self):
         with CursorFromConnectionPool() as cursor:
