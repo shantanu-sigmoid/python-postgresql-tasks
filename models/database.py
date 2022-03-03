@@ -1,5 +1,6 @@
 from psycopg2 import pool
 import logging
+from sqlalchemy import create_engine
 
 
 class Database:
@@ -44,3 +45,11 @@ class CursorFromConnectionPool:
             logging.info("Database Connection Closed")
             self.conn.commit()
         Database.return_connection(self.conn)
+
+class Engine:
+    def __init__(self, connection_string):
+        self.connection_string = connection_string
+        self.engine = None
+    def make_engine(self):
+        self.engine = create_engine(self.connection_string)
+        return self.engine

@@ -12,3 +12,17 @@
 2022-03-03 14:07:05,904:INFO:Department object created <(dept_no = 97), (dept_name = demo_dname2), (loc = demo_location)>
 2022-03-03 14:07:05,904:INFO:Employee object created <(empno = 9998), (ename = SMITH), (job = CLERK)>
 2022-03-03 14:07:05,904:INFO:JobHistory object created <(empno = 9999), (start_date = 17-DEC-88), (sal = 999)>
+2022-03-03 15:48:19,011:DEBUG:Database Initialized
+2022-03-03 15:48:19,012:INFO:Department object created <(dept_no = 97), (dept_name = demo_dname2), (loc = demo_location)>
+2022-03-03 15:48:19,012:INFO:Employee object created <(empno = 9998), (ename = SMITH), (job = CLERK)>
+2022-03-03 15:48:19,012:INFO:JobHistory object created <(empno = 9999), (start_date = 17-DEC-88), (sal = 999)>
+2022-03-03 15:53:07,318:DEBUG:Database Initialized
+2022-03-03 15:53:07,319:INFO:Department object created <(dept_no = 97), (dept_name = demo_dname2), (loc = demo_location)>
+2022-03-03 15:53:07,319:INFO:Employee object created <(empno = 9998), (ename = SMITH), (job = CLERK)>
+2022-03-03 15:53:07,319:INFO:JobHistory object created <(empno = 9999), (start_date = 17-DEC-88), (sal = 999)>
+2022-03-03 16:00:56,156:DEBUG:Database Initialized
+2022-03-03 16:01:11,439:DEBUG:Database Initialized
+2022-03-03 16:03:31,675:DEBUG:Database Initialized
+2022-03-03 16:03:31,712:INFO:Department object created <(dept_no = 97), (dept_name = demo_dname2), (loc = demo_location)>
+2022-03-03 16:03:31,712:INFO:Employee object created <(empno = 9998), (ename = SMITH), (job = CLERK)>
+2022-03-03 16:03:31,712:INFO:JobHistory object created <(empno = 9999), (start_date = 17-DEC-88), (sal = 999)>
