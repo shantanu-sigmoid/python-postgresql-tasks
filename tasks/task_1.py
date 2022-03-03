@@ -1,27 +1,10 @@
-# Task 1
-# Write a Python program to list employee numbers, 
-# names and their managers and save in a xlsx file.
-import os
-import sys
-# path = '/Users/shantanu/Desktop/python-postgresql-tasks/models'
-# os.environ['PATH'] += ':'+path
-p = os.path.abspath('../models')
-print(p)
-sys.path.insert(1, p)
-# print(os.environ['PATH'])
-
-# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('/Users/shantanu/Desktop/python-postgresql-tasks/models'))))
-# print(sys.path)
-# from ..models import database
-# from models.database import CursorFromConnectionPool
-
-from ..models.database import CursorFromConnectionPool
-# from . import models.database.Database
-
-# TODO: Resolve importing database cursor from models above
-
 import pandas as pd
 import logging
+# Trick for import from parent-parent package
+import sys
+sys.path.append("../")
+from models.database import CursorFromConnectionPool,Database
+
 
 def run_query(query):
     with CursorFromConnectionPool() as cursor:
@@ -46,7 +29,16 @@ def convert_list_to_xlsx(data, location):
     except:
         logging.error(f"Unable to convert dataframe to excel in location - {location}")
 if __name__ == "__main__":
+    # Task 1
+    # Write a Python program to list employee numbers, 
+    # names and their managers and save in a xlsx file.
+
+    # Connecting to the Datbase demo
+    Database.initialise(database="demo", user="postgres", password="password", host="localhost")
+    # Query for Task 1
     query = "select e1.empno, e1.ename as emp_name, e2.ename as mgr_name  \
     from emp as e1 INNER JOIN emp as e2 on (e1.mgr = e2.empno);"
-    path = "./data/task_1.xlsx"
+    # Path to store file in xlsx format
+    path = "../data/task_1.xlsx"
+    # Action
     convert_list_to_xlsx(run_query(query), path)
