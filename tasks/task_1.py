@@ -33,7 +33,7 @@ if __name__ == "__main__":
     # Write a Python program to list employee numbers, 
     # names and their managers and save in a xlsx file.
 
-    # Connecting to the Datbase demo
+    # Connecting to the Database demo
     Database.initialise(database="demo", user="postgres", password="password", host="localhost")
     # Query for Task 1
     query = "select e1.empno, e1.ename as emp_name, e2.ename as mgr_name  \

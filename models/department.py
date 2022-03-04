@@ -20,13 +20,17 @@ class Department:
             user_data = cursor.fetchone()
             # Will return <Department (no = ), (dname = ), (loc = )>
             return cls(user_data[0], user_data[1], user_data[2])
+            
     @classmethod
     def show_all_data(cls):
         with CursorFromConnectionPool() as cursor:
-            cursor.execute("SELECT * FROM dept")
-            user_data = cursor.fetchall()
-            for data in user_data:
-                print(cls(data[0], data[1], data[2]))
+            try:
+                cursor.execute("SELECT * FROM dept")
+                user_data = cursor.fetchall()
+                for data in user_data:
+                    print(cls(data[0], data[1], data[2]))
+            except:
+                logging.error("Cursor failed to execute while showing all data from dept table")
 
     def save_to_db(self):
         with CursorFromConnectionPool() as cursor:

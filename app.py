@@ -6,18 +6,6 @@ import pandas as pd
 import logging
 
 
-# def run_query(query):
-#     with CursorFromConnectionPool() as cursor:
-#         cursor.execute(query)
-#         query_result = cursor.fetchall()
-#         query_result.insert(0, [cursor.description[i].name for i in range(len(cursor.description))])
-#         return query_result
-
-# def convert_list_to_xlsx(data, path):
-#     df = pd.DataFrame(data)
-#     df.to_excel(path, header =False, index = False)
-
-
 if(__name__ == "__main__"):
     # Configure logging
     logging.basicConfig(filename='./log/system.log', format='%(asctime)s:%(levelname)s:%(message)s', level=logging.DEBUG)

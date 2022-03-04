@@ -51,5 +51,8 @@ class Engine:
         self.connection_string = connection_string
         self.engine = None
     def make_engine(self):
-        self.engine = create_engine(self.connection_string)
-        return self.engine
+        try:
+            self.engine = create_engine(self.connection_string)
+            return self.engine
+        except:
+            logging.error("Creating engine failed. Connetion string not valid.")
