@@ -37,7 +37,7 @@ if __name__ == "__main__":
     Database.initialise(database="demo", user="postgres", password="password", host="localhost")
     # Query for Task 1
     query = "select e1.empno, e1.ename as emp_name, e2.ename as mgr_name  \
-    from emp as e1 INNER JOIN emp as e2 on (e1.mgr = e2.empno);"
+    from emp as e1 LEFT JOIN emp as e2 on (e1.mgr = e2.empno);"
     # Path to store file in xlsx format
     path = "../data/task_1.xlsx"
     # Action

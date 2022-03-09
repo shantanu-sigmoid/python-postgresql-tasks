@@ -123,7 +123,7 @@ Problems:
 1.	Write a Python program to list employee numbers, names and their managers 
 and save in a xlsx file.
 ```sql
-select e1.empno, e1.ename, e2.ename from emp as e1 INNER JOIN emp as e2 on (e1.mgr = e2.empno);
+select e1.empno, e1.ename, e2.ename from emp as e1 LEFT JOIN emp as e2 on (e1.mgr = e2.empno);
 ```
 
 2.	Write a python program to list the Total compensation  given till his/her 
